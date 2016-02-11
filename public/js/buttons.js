@@ -109,7 +109,7 @@ var updateYear = function(){
 
     //col  1
     updateCost();
-    $$("areaYear").setHTML("<div style='font-size: 42px; padding: 14px; color: lightgrey; font-weight: bold'>" + year + "</div>")
+    $$("areaYear").setHTML("<div style='font-size: 49px; padding: 14px; color: lightgrey; font-weight: bold; text-align: center;'>" + year + "</div>")
 
 
     //col 2
@@ -133,9 +133,13 @@ var updateFeature = function(name){
 
 var updateCost = function(){
     webix.ajax("/" + mapId + "/cost_data/" + id + "/"  + year , function(text,data){
+
+        color = "red";
+        if(Number(data.json().baseCost) >  Number(data.json().cost)){ color = "black"}
+
         $$("areaCost").setHTML(
-            "<br><div style='font-size: 35px; padding: 14px; line-height: 20%'>" + ( data.json().cost - data.json().baseCost).toMoney(0) + "</div>" +
-            "<p style='font-size: 14px; '>Annual cost increase from 2015 for local area</p>"
+            "<br><div style='font-size: 35px; padding: 14px; line-height: 20%; text-align: center; color: " + color + "'>" + ( data.json().cost - data.json().baseCost).toMoney(0) + "</div>" +
+            "<p style='font-size: 14px; text-align: center; '>Annual cost increase from 2015 for local area</p>"
         )
     });
 };

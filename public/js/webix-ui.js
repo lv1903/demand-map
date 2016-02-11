@@ -29,8 +29,11 @@ demandMap.uiLineChart = {
             value:"#total_pop#",
             preset:"plot",
             xAxis:{
-                template:"#year#"
-
+                //template:"#year#",
+                template:function(obj){console.log(obj.year) ; return (obj.year%2?obj.year:"")}//,
+                //lineColor:function(obj){
+                //    return (obj.year%2?"#e9eef9":"#f3f7ff") //colors lines for odd and even years in different colors
+                //}
             },
             yAxis:{
             },
@@ -117,9 +120,10 @@ demandMap.uiGraphComponents = {
     scroll: "x",
     body: {
         cols: [
+            {gravity: 1},
             {
                 id: "details",
-                gravity: 1,
+                gravity: 20,
                 //minWidth: 200,
                 rows: [
                     {
@@ -142,7 +146,7 @@ demandMap.uiGraphComponents = {
             },
             {
                 container:"demandChart",
-                gravity: 2,
+                gravity: 40,
                 //minWidth: 400,
                 cols:[
                     {
@@ -180,7 +184,7 @@ demandMap.uiGraphComponents = {
             {
                 container:"popChart",
                 //minWidth: 200,
-                gravity: 1,
+                gravity: 20,
                 rows:[
                     {
                         cols:[
@@ -194,7 +198,9 @@ demandMap.uiGraphComponents = {
 
                 ]
 
-            }
+            },
+            {gravity: 1}
+
         ]
     }
 
