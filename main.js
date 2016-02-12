@@ -46,14 +46,13 @@ var oMaps = [
         rateData: {},
         demandData: {},
         unitCostPounds: 16768,
-        supplyPointQuery: "http://q.nqminds.com/v1/datasets/NkWEN1DTtl/data?filter={%22properties.PhaseOfEducation%22:%22Primary%22}",
+        supplyPointQuery: "http://q.nqminds.com/v1/datasets/EyZDbG2Lqg/data?filter={%22$or%22:[{%22properties.PhaseOfEducation%20(name)%22:%22Primary%22},{%22properties.PhaseOfEducation%20(name)%22:%22All%20Through%22}]}&proj={%22geometry%22:1,%22properties.geoStatus%22:1,%22properties.NumberOfPupils%22:1,%22properties.SchoolCapacity%22:1,%22properties.EstablishmentName%22:1,%22properties.OfstedSpecialMeasures%20(name)%22:1,%22properties.Postcode%22:1,%22properties.Town%22:1,%22properties.Street%22:1}",
         supplyPointSchema: {
             name: ["properties", "EstablishmentName"],
             facts: [
-                ["properties", "HeadFirstName"],
-                ["properties", "HeadLastName"],
-                ["properties", "HeadPreferredJobTitle"],
-                ["properties", "TypeOfEstablishment"]
+                ["properties", "NumberOfPupils"],
+                ["properties", "SchoolCapacity"],
+                ["properties", "OfstedSpecialMeasures (name)"]
             ],
             address: [
                 ["properties", "Street"],
@@ -73,15 +72,14 @@ var oMaps = [
         rateFile: "secondary_rates.json",
         rateData: {},
         demandData: {},
-        unitCostPounds: 16768,
-        supplyPointQuery: "http://q.nqminds.com/v1/datasets/NkWEN1DTtl/data?filter={%22properties.PhaseOfEducation%22:%22Secondary%22}",
+        unitCostPounds: 19084,
+        supplyPointQuery: "http://q.nqminds.com/v1/datasets/EyZDbG2Lqg/data?filter={%22$or%22:[{%22properties.PhaseOfEducation%20(name)%22:%22Secondary%22},{%22properties.PhaseOfEducation%20(name)%22:%22All%20Through%22},{%22properties.PhaseOfEducation%20(name)%22:%2216%20Plus%22}]}&proj={%22geometry%22:1,%22properties.geoStatus%22:1,%22properties.NumberOfPupils%22:1,%22properties.SchoolCapacity%22:1,%22properties.EstablishmentName%22:1,%22properties.OfstedSpecialMeasures%20(name)%22:1,%22properties.Postcode%22:1,%22properties.Town%22:1,%22properties.Street%22:1}",
         supplyPointSchema: {
             name: ["properties", "EstablishmentName"],
             facts: [
-                ["properties", "HeadFirstName"],
-                ["properties", "HeadLastName"],
-                ["properties", "HeadPreferredJobTitle"],
-                ["properties", "TypeOfEstablishment"]
+                ["properties", "NumberOfPupils"],
+                ["properties", "SchoolCapacity"],
+                ["properties", "OfstedSpecialMeasures (name)"]
             ],
             address: [
                 ["properties", "Street"],
@@ -101,15 +99,14 @@ var oMaps = [
         rateFile: "college_rates.json",
         rateData: {},
         demandData: {},
-        unitCostPounds: 16768,
-        supplyPointQuery: "http://q.nqminds.com/v1/datasets/NkWEN1DTtl/data?filter={%22properties.PhaseOfEducation%22:%22Secondary%22,%20%22properties.OfficialSixthForm%22:%22Has%20a%20sixth%20form%22}",
+        unitCostPounds: 19084,
+        supplyPointQuery: "http://q.nqminds.com/v1/datasets/EyZDbG2Lqg/data?filter={%22$or%22:[{%22properties.PhaseOfEducation%20(name)%22:%22Secondary%22,%20%22properties.StatutoryLowAge%22:16},{%22properties.PhaseOfEducation%20(name)%22:%22All%20Through%22,%20%22properties.StatutoryLowAge%22:16},{%22properties.PhaseOfEducation%20(name)%22:%2216%20Plus%22}]}&proj={%22geometry%22:1,%22properties.geoStatus%22:1,%22properties.NumberOfPupils%22:1,%22properties.SchoolCapacity%22:1,%22properties.EstablishmentName%22:1,%22properties.OfstedSpecialMeasures%20(name)%22:1,%22properties.Postcode%22:1,%22properties.Town%22:1,%22properties.Street%22:1}",
         supplyPointSchema: {
             name: ["properties", "EstablishmentName"],
             facts: [
-                ["properties", "HeadFirstName"],
-                ["properties", "HeadLastName"],
-                ["properties", "HeadPreferredJobTitle"],
-                ["properties", "TypeOfEstablishment"]
+                ["properties", "NumberOfPupils"],
+                ["properties", "SchoolCapacity"],
+                ["properties", "OfstedSpecialMeasures (name)"]
             ],
             address: [
                 ["properties", "Street"],

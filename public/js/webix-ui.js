@@ -225,7 +225,7 @@ demandMap.uiMainLayout = {
             id: "graphView",
             header:"Area Details",
             body: demandMap.uiGraphComponents,
-            height: 500,
+            height: 400,
             collapsed: true}
     ]
 };
