@@ -20,7 +20,7 @@ var oMaps = [
         rateData: {},
         demandData: {},
         unitCostPounds: 45,
-        supplyPointsQuery: "http://q.nqminds.com/v1/datasets/EkgAN_mfLx/data",
+        supplyPointQuery: "http://q.nqminds.com/v1/datasets/EkgAN_mfLx/data",
         supplyPointSchema: {
             name: ["name"],
             facts: [
@@ -32,7 +32,8 @@ var oMaps = [
                 ["post_code"]
             ],
             lat: ["geoCode", "lat"],
-            lng: ["geoCode", "lng"]
+            lng: ["geoCode", "lng"],
+            geoStatus: ["geoStatus"]
         }
     },
 
@@ -60,7 +61,8 @@ var oMaps = [
                 ["properties", "Postcode"]
             ],
             lat: ["geometry", "coordinates", 1],
-            lng: ["geometry", "coordinates", 0]
+            lng: ["geometry", "coordinates", 0],
+            geoStatus: ["properties", "geoStatus"]
         }
     },
 
@@ -87,7 +89,8 @@ var oMaps = [
                 ["properties", "Postcode"]
             ],
             lat: ["geometry", "coordinates", 1],
-            lng: ["geometry", "coordinates", 0]
+            lng: ["geometry", "coordinates", 0],
+            geoStatus: ["properties", "geoStatus"]
         }
     },
 
@@ -114,7 +117,8 @@ var oMaps = [
                 ["properties", "Postcode"]
             ],
             lat: ["geometry", "coordinates", 1],
-            lng: ["geometry", "coordinates", 0]
+            lng: ["geometry", "coordinates", 0],
+            geoStatus: ["properties", "geoStatus"]
         }
     },
 
@@ -139,7 +143,8 @@ var oMaps = [
                 ["properties","Postcode"]
             ],
             lat: ["geometry","coordinates",1],
-            lng: ["geometry","coordinates",0]
+            lng: ["geometry","coordinates",0],
+            geoStatus: ["properties", "geoStatus"]
 
         }
     }
@@ -152,7 +157,7 @@ var oGPsData = require("./data/gpSurgeries.json");
 
 
 var baseYear = "2015";
-var homeYear = "2017";
+var homeYear = "2020";
 
 app.set("views", __dirname + "/views");
 app.set("view engine","jade");

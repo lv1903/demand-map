@@ -64,6 +64,14 @@ function polygonColors(year){
     }
 }
 
+
+
+var playYears = function(){
+
+
+}
+
+
 var backYear = function(){
 
     var year;
@@ -109,7 +117,8 @@ var updateYear = function(){
 
     //col  1
     updateCost();
-    $$("areaYear").setHTML("<div style='font-size: 49px; padding: 14px; color: lightgrey; font-weight: bold; text-align: center;'>" + year + "</div>")
+    //updateyear
+    $$("areaYear").setHTML("<div style='font-size: 70px; padding: 14px; color: lightgrey; font-weight: bold; text-align: center; vertical-align: middle;'>" + year + "</div>")
 
 
     //col 2

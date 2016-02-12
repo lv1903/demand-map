@@ -59,6 +59,8 @@ function getInfoBoxString(supplyPoint){
 function showMarkers(){
 
     if(supplyPoints == undefined){ //if not there get the points from toolbox
+
+            console.log(oMap.supplyPointQuery)
         webix.ajax(oMap.supplyPointQuery , function(text,data){
             supplyPoints = data.json().data;
             addMarkers();
@@ -83,7 +85,7 @@ var markers = [];
 
 function addMarkers(){
     for (var i in supplyPoints){
-        if (supplyPoints[i].properties.geoStatus == "OK"){
+        if (getProperty(supplyPoints[i], oMap.supplyPointSchema.geoStatus, 0) == "OK"){
             markers.push(createMarker(supplyPoints[i]));
         }
     }
@@ -133,7 +135,6 @@ function hideMarkers(){
 
 
 function supplyPointToggle(){
-    //console.log(this.data)
 
     if(this.data.label == this.data.onLabel){
         showMarkers();

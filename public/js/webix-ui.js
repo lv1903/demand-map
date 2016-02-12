@@ -29,11 +29,8 @@ demandMap.uiLineChart = {
             value:"#total_pop#",
             preset:"plot",
             xAxis:{
-                //template:"#year#",
-                template:function(obj){console.log(obj.year) ; return (obj.year%2?obj.year:"")}//,
-                //lineColor:function(obj){
-                //    return (obj.year%2?"#e9eef9":"#f3f7ff") //colors lines for odd and even years in different colors
-                //}
+                title: "Total Population",
+                template:function(obj){return (obj.year%2?obj.year:"")}//,
             },
             yAxis:{
             },
@@ -55,20 +52,21 @@ demandMap.uiDemandChart = {
 
             },
             xAxis: {
+                title: "Demand by Age and Gender",
                 start:0
             },
             border: false,
-            barWidth: 35,
+            barHeight: 35,
             alpha: 1,
             series:[
                 {
-                    value:"#male#",
-                    color: "lightblue"
+                    value:"#female#",
+                    color: "pink"
 
                 },
                 {
-                    value:"#female#",
-                    color:"pink"
+                    value:"#male#",
+                    color:"lightblue"
 
                 }
             ],
@@ -89,10 +87,12 @@ demandMap.uiPopPyramidChart = {
 
             },
             xAxis: {
+                title: "Population by Age and Gender",
                 start:0
             },
             border: false,
-            barWidth: 35,
+            //barWidth: 35,
+            //preset:"column",
             alpha: 1,
             series:[
                 {
@@ -130,17 +130,17 @@ demandMap.uiGraphComponents = {
                         id: "areaName",
                         template: "<div style='padding-left:5px'>Select an area on the map</div>",
                         height: 40
+                    },
 
+                    {
+                        id: "areaYear",
+                        template: "<div style='font-size: 42px; padding: 14px; color: lightgrey; font-weight: bold; vertical-align: middle;'>" + year + "</div>",
+                        gravity: 1
                     },
                     {
                         id: "areaCost",
                         template: "<h1></h1>",
-                        gravity: 1
-                    },
-                    {
-                        id: "areaYear",
-                        template: "<div style='font-size: 42px; padding: 14px; color: lightgrey; font-weight: bold'>" + year + "</div>",
-                        gravity: 1
+                        gravity: 2
                     }
                 ]
             },
@@ -218,14 +218,14 @@ demandMap.uiMainLayout = {
             id: "mapView",
             header:"",
             headerheight: 0,
-            body: demandMap.uiMapView,
-            height:"80vh"
+            body: demandMap.uiMapView//,
+            //height:"80vh"
         },
         {
             id: "graphView",
             header:"Area Details",
             body: demandMap.uiGraphComponents,
-            minHeight:"700px",
+            height: 500,
             collapsed: true}
     ]
 };
@@ -261,7 +261,8 @@ demandMap.uiToolbar = {
         { view:"select", options: aYears, width: 70, id: "yearList", value: year, on:{ onChange: selectYear } },
         { view:"button", value:"+", width: 28, click: forwardYear },
         {},
-        demandMap.supplypoint_toggle
+        demandMap.supplypoint_toggle,
+        {}
 
     ],
     checkboxRefresh:true
